@@ -1,0 +1,112 @@
+/* stat cards */
+
+.stat-card{
+  background:#020617;
+  border:1px solid #1e293b;
+  border-radius:16px;
+
+  padding:14px;
+  height:auto;           /* prevents stretching */
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+}
+
+.stat-card h3{
+  font-size:14px;      /* FIX: your 3px was extremely small */
+  opacity:0.7;
+  margin-bottom:4px;
+}
+
+.stat-card p{
+  font-size:18px;      /* FIX: your 1px was invisible */
+  color:#4ade80;
+  font-weight:bold;
+  margin:0;
+}
+.page-card{
+  max-width:1100px;
+  margin:0 auto;
+  background:#0f172a;
+  border-radius:20px;
+  padding:18px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.6);
+}
+
+  body{
+  margin:0;
+  overflow:hidden;
+}
+.badge{
+  padding:6px 10px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:500;
+}
+
+
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+}
+
+.table th{
+  text-align:left;
+  opacity:0.6;
+  padding:14px;
+  font-size:14px;
+}
+
+.table td{
+  padding:14px;
+  border-top:1px solid #1e293b;
+}
+.btn-green{
+  background:linear-gradient(90deg,#4ade80,#22c55e);
+  border:none;
+  padding:8px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  color:#020617;
+}
+/* edit button */
+
+.edit-btn{
+  background:#1e293b;
+  color:#cbd5e1;
+  border:none;
+  padding:6px 12px;
+  border-radius:8px;
+  font-size:12px;
+  cursor:pointer;
+  margin-right:8px;
+  transition:0.2s;
+}
+
+.edit-btn:hover{
+  background:#334155;
+}
+
+
+/* delete button */
+
+.delete-btn{
+  background:#7f1d1d;
+  color:#fca5a5;
+  border:none;
+  padding:5px 10px;
+  border-radius:8px;
+  font-size:11px;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.delete-btn:hover{
+  background:#991b1b;
+}
