@@ -26,7 +26,7 @@ function Budget() {
 
       try {
         const res = await fetch(
-          `http://localhost:5000/api/budget/${userId}?month=${month}`
+          `http://personal-finance-ai-advisor-1.onrender.com/api/budget/${userId}?month=${month}`
         );
 
         if (!res.ok) {
@@ -65,7 +65,7 @@ function Budget() {
     setSaving(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/budget", {
+      const res = await fetch("http://personal-finance-ai-advisor-1.onrender.com/api/budget", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -103,7 +103,7 @@ function Budget() {
       setBudgetLimit(String(savedLimit));
 
       const budgetRes = await fetch(
-        `http://localhost:5000/api/budget/${userId}?month=${month}`
+        `http://personal-finance-ai-advisor-1.onrender.com/api/budget/${userId}?month=${month}`
       );
 
       if (!budgetRes.ok) {

@@ -27,7 +27,7 @@ function Profile() {
       if (!userId) return;
 
       try {
-        const res = await fetch(`http://localhost:5000/api/users/${userId}`);
+        const res = await fetch(`http://personal-finance-ai-advisor-1.onrender.com/api/users/${userId}`);
         const data = await parseJsonResponse(res);
 
         if (!res.ok) {
@@ -80,7 +80,7 @@ function Profile() {
         payload.profileImage = previewImage;
       }
 
-      const res = await fetch(`http://localhost:5000/api/users/${userId}/profile`, {
+      const res = await fetch(`http://personal-finance-ai-advisor-1.onrender.com/api/users/${userId}/profile`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"

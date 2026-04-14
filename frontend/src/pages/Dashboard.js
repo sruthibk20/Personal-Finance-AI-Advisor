@@ -27,7 +27,7 @@ function Dashboard() {
   const loadSummary = async () => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/summary/${userId}`
+        `http://personal-finance-ai-advisor-1.onrender.com/api/summary/${userId}`
       );
 
       const data = await res.json();
@@ -45,7 +45,7 @@ function Dashboard() {
   const loadML = async () => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/ml/${userId}`
+        `http://personal-finance-ai-advisor-1.onrender.com/api/ml/${userId}`
       );
 
       const data = await res.json();
