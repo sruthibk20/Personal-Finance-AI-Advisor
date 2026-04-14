@@ -14,7 +14,7 @@ import {
 } from "recharts";
 
 function Dashboard() {
-  const [loading, setLoading] = useState(true);
+
   const [summary, setSummary] = useState(null);
   const [chartData, setChartData] = useState([]);
   const [categoryData, setCategoryData] = useState([]);
@@ -23,54 +23,45 @@ function Dashboard() {
   const user = JSON.parse(localStorage.getItem("user") || "{}");
   const userId = user.userId;
 
+  // ✅ LOAD SUMMARY (unchanged)
   const loadSummary = async () => {
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/summary/${userId}`
+      );
 
-    const res = await fetch(
-      `http://localhost:5000/api/summary/${userId}`
-    );
+      const data = await res.json();
 
-    const data = await res.json();
+      setSummary(data);
+      setChartData(data.monthlyExpenses || []);
+      setCategoryData(data.categoryBreakdown || []);
 
-    setSummary(data);
-
-    setChartData(data.monthlyExpenses || []);
-    setCategoryData(data.categoryBreakdown || []);
-
+    } catch (error) {
+      console.error("Summary error:", error);
+    }
   };
 
+  // ✅ FIXED ML FUNCTION
   const loadML = async () => {
-  const loadSummary = async () => {
-  setLoading(true);
+    try {
+      const res = await fetch(
+        `http://localhost:5000/api/ml/${userId}`
+      );
 
-  const res = await fetch(`http://localhost:5000/api/summary/${userId}`);
-  const data = await res.json();
+      const data = await res.json();
 
-  setSummary(data);
-  setChartData(data.monthlyExpenses || []);
-  setCategoryData(data.categoryBreakdown || []);
+      setMl(data);
 
-  setLoading(false);
-};
-if (loading) {
-  return <Layout><p>Loading dashboard...</p></Layout>;
-}
-    const res = await fetch(
-      `http://localhost:5000/api/ml/${userId}`
-    );
-
-    const data = await res.json();
-
-    setMl(data);
-
+    } catch (error) {
+      console.error("ML fetch error:", error);
+    }
   };
 
   useEffect(() => {
-
     if (userId) {
       loadSummary();
       loadML();
     }
-
   }, [userId]);
 
   return (
@@ -131,7 +122,6 @@ if (loading) {
 
             </div>
 
-
             {/* CHART + AI INSIGHTS */}
 
             <div
@@ -180,7 +170,6 @@ if (loading) {
 
                 </div>
 
-
                 {/* PIE CHART */}
 
                 <div
@@ -194,9 +183,9 @@ if (loading) {
 
                   <div
                     style={{
-                      display:"grid",
-                      gridTemplateColumns:"1fr 1fr",
-                      alignItems:"center"
+                      display: "grid",
+                      gridTemplateColumns: "1fr 1fr",
+                      alignItems: "center"
                     }}
                   >
 
@@ -219,7 +208,6 @@ if (loading) {
                 </div>
 
               </div>
-
 
               {/* RIGHT SIDE */}
 

@@ -23,8 +23,8 @@ function ExpensePieChart({ data = [] }) {
         nameKey="category"
         cx="50%"
         cy="50%"
-        outerRadius={50}
-        label
+        outerRadius={40}
+        
       >
 
         {data.map((entry, index) => (
