@@ -23,7 +23,7 @@ if(!id) return;
 const loadExpense = async ()=>{
 
 const res = await fetch(
-`http://personal-finance-ai-advisor-1.onrender.com/expenses/single/${id}`
+`https://personal-finance-ai-advisor-1.onrender.com/expenses/single/${id}`
 );
 
 const data = await res.json();
@@ -44,8 +44,8 @@ const handleSubmit = async (e)=>{
 e.preventDefault();
 
 const url = id
-? `http://personal-finance-ai-advisor-1.onrender.com/api/expenses/${id}`
-: `http://personal-finance-ai-advisor-1.onrender.com/api/expenses`;
+? `https://personal-finance-ai-advisor-1.onrender.com/api/expenses/${id}`
+: `https://personal-finance-ai-advisor-1.onrender.com/api/expenses`;
 
 const method = id ? "PUT" : "POST";
 

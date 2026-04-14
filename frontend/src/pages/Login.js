@@ -15,7 +15,7 @@ e.preventDefault();
 try{
 
 const res = await fetch(
-"http://personal-finance-ai-advisor-1.onrender.com/api/users/login",
+"https://personal-finance-ai-advisor-1.onrender.com/api/users/login",
 {
 method:"POST",
 headers:{

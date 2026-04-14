@@ -15,7 +15,7 @@ const getSummary = async () => {
 try{
 
 const res = await fetch(
-`http://personal-finance-ai-advisor-1.onrender.com/api/summary/${userId}`
+`https://personal-finance-ai-advisor-1.onrender.com/api/summary/${userId}`
 );
 
 const data = await res.json();

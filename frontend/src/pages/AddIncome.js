@@ -17,7 +17,7 @@ function AddIncome() {
 
     try {
 
-      await fetch("http://personal-finance-ai-advisor-1.onrender.com/api/income", {
+      await fetch("https://personal-finance-ai-advisor-1.onrender.com/api/income", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

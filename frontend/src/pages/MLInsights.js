@@ -13,7 +13,7 @@ const generateInsights = async () => {
 try{
 
 const res = await fetch(
-`http://personal-finance-ai-advisor-1.onrender.com/api/ml/${userId}`
+`https://personal-finance-ai-advisor-1.onrender.com/api/ml/${userId}`
 );
 
 const data = await res.json();

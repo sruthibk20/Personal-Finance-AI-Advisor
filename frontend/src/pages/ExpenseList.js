@@ -17,7 +17,7 @@ function Transactions() {
 
     setLoading(true);
 
-    const res = await fetch(`http://personal-finance-ai-advisor-1.onrender.com/api/expenses/user/${userId}`);
+    const res = await fetch(`https://personal-finance-ai-advisor-1.onrender.com/api/expenses/user/${userId}`);
     const data = await res.json();
 
     setExpenses(data);
@@ -27,7 +27,7 @@ function Transactions() {
   // DELETE
   const deleteExpense = async (id) => {
 
-    await fetch(`http://personal-finance-ai-advisor-1.onrender.com/api/expenses/${id}`, {
+    await fetch(`https://personal-finance-ai-advisor-1.onrender.com/api/expenses/${id}`, {
       method: "DELETE"
     });
 
