@@ -2,9 +2,9 @@ const Expense = require("../models/Expense");
 const Income = require("../models/Income");
 const Groq = require("groq-sdk");
 
-const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY
-});
+const groq = process.env.GROQ_API_KEY
+  ? new Groq({ apiKey: process.env.GROQ_API_KEY })
+  : null;
 
 const formatCurrency = (value) => `₹${Number(value || 0).toFixed(0)}`;
 
@@ -219,3 +219,4 @@ ${message}
 };
 
 module.exports = { chat };
+console.log("GROQ KEY:", process.env.GROQ_API_KEY);
