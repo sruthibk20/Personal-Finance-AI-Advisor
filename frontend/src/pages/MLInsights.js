@@ -13,7 +13,7 @@ const generateInsights = async () => {
 try{
 
 const res = await fetch(
-`https://personal-finance-ai-advisor-1.onrender.com/api/ml/${userId}`
+`https://personal-finance-ai-advisor-production-eac3.up.railway.app/api/ml/${userId}`
 );
 
 const data = await res.json();
@@ -46,7 +46,12 @@ Generate Insights
 <div style={{marginTop:"25px"}}>
 
 <h3>Predicted Next Month Expense</h3>
-<p>₹{insights.predictedExpense}</p>
+<p>
+  {insights.predictedExpense < 0
+    ? `⚠️ Overspending by ₹${Math.abs(insights.predictedExpense)}`
+    : `₹${insights.predictedExpense}`
+  }
+</p>
 
 <h3>Overspending Analysis</h3>
 <p>{insights.analysis}</p>

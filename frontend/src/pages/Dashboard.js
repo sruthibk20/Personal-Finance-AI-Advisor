@@ -27,7 +27,7 @@ function Dashboard() {
   const loadSummary = async () => {
     try {
       const res = await fetch(
-        `https://personal-finance-ai-advisor-1.onrender.com/api/summary/${userId}`
+        `https://personal-finance-ai-advisor-production-eac3.up.railway.app/api/summary/${userId}`
       );
 
       const data = await res.json();
@@ -45,7 +45,7 @@ function Dashboard() {
   const loadML = async () => {
     try {
       const res = await fetch(
-        `https://personal-finance-ai-advisor-1.onrender.com/api/ml/${userId}`
+        `https://personal-finance-ai-advisor-production-eac3.up.railway.app/api/ml/${userId}`
       );
 
       const data = await res.json();
@@ -228,7 +228,12 @@ function Dashboard() {
 
                     <div className="ai-prediction-card">
                       <span className="ai-prediction-label">Predicted Expense</span>
-                      <strong className="ai-prediction-value">₹{ml.predictedExpense}</strong>
+                      <strong className="ai-prediction-value">
+  {ml.predictedExpense < 0
+    ? `⚠️ ₹${Math.abs(ml.predictedExpense)} overspent`
+    : `₹${ml.predictedExpense}`
+  }
+</strong>
                     </div>
 
                     <div className="ai-insight-section">
