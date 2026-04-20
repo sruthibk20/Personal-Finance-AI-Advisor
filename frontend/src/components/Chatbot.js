@@ -34,7 +34,7 @@ function Chatbot() {
     setSending(true);
 
     try {
-      const res = await fetch("https://personal-finance-ai-advisor-production-eac3.up.railway.app/api/chatbot", {", {
+      const res = await fetch("https://personal-finance-ai-advisor-production-eac3.up.railway.app/api/chatbot", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
